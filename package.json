@@ -1,0 +1,36 @@
+{
+  "name": "tree-ops",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @treeops/web dev",
+    "build": "pnpm --filter @treeops/web build",
+    "typecheck": "turbo run typecheck",
+    "test:unit": "turbo run test:unit",
+    "test:db": "pnpm --filter @treeops/db test:db",
+    "test:integration": "pnpm --filter @treeops/web test:integration",
+    "test:e2e": "pnpm --filter @treeops/web test:e2e",
+    "db:start": "node scripts/db-start.mjs",
+    "db:stop": "node scripts/supabase.mjs stop",
+    "db:reset": "node scripts/supabase.mjs db reset",
+    "seed:demo": "pnpm --filter @treeops/web seed:demo",
+    "verify": "node scripts/verify.mjs",
+    "db:schedule": "pnpm --filter @treeops/db db:schedule",
+    "db:push": "node scripts/supabase.mjs db push",
+    "db:link": "node scripts/supabase.mjs link"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.10",
+    "typescript": "~5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}

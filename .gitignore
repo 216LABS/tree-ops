@@ -1,0 +1,12 @@
+node_modules
+.next
+.turbo
+.env*.local
+.env
+test-results
+playwright-report
+coverage
+*.tsbuildinfo
+next-env.d.ts
+packages/db/supabase/.temp
+packages/db/supabase/.branches
